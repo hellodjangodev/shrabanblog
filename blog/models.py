@@ -17,3 +17,6 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Student(models.Model):
+    name = models.CharField(max_length=300)
