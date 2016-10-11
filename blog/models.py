@@ -18,5 +18,10 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
-class Student(models.Model):
-    name = models.CharField(max_length=300)
+class About(models.Model):
+    text = models.TextField()
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
