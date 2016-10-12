@@ -10,7 +10,8 @@ def index(request):
     return render(request, 'blog/index.html', {'posts': posts})
 
 def about(request):
-    return render(request, 'blog/about.html', {})
+    about_me = About.objects.all()
+    return render(request, 'blog/about.html', {'about_me': about_me})
 
 def contact(request):
     return render(request, 'blog/contact.html', {})
